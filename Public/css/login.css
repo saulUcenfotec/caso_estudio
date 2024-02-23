@@ -1,0 +1,109 @@
+body {
+    background: #BF7B3F;
+    font-family: 'Raleway', sans-serif;
+    height: 100%;
+}
+
+.login-card {
+    background: #ffffff;
+    border: solid 1px #797979;
+    box-shadow: 5px 5px 5px #0000004f;
+    height: 615px;
+    width: 550px;
+    margin: 100px auto;
+    margin-top: 150px;
+}
+
+#header-principal {
+    text-align: center;
+    color: #184059;
+    font-family: 'Merriweather', serif;
+    font-size: 55px;
+    font-weight: bold;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+#sec-principal {
+    text-align: center;
+}
+
+#sec-principal form input {
+    color: #333333;
+    font-size: 19px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    height: 30px;
+    outline: none;
+    width: 56%;
+}
+
+#sec-principal form label {
+    color: #333333;
+    font-size: 20px;
+}
+
+#sec-principal form .crear-cuenta a {
+    color: #184059;
+    float: left;
+    margin-left: 118px;
+    margin-top: 70px;
+    width: 119px;
+}
+
+#sec-principal .label-1 {
+    padding-right: 71px;
+}
+
+#sec-principal .label-2 {
+    padding-right: 135px;
+}
+
+#recordar-usuario {
+    display: flow-root;
+}
+
+#sec-principal p {
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+#sec-principal form button {
+    background: #8C2F1B;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    float: right;
+    font-size: 17px;
+    height: 40px;
+    width: 140px;
+    margin-top: 60px;
+    margin-right: 120px;
+}
+
+#sec-principal .btn-container {
+    display: flow-root;
+}
+
+#sec-principal .text-inputs {
+    margin-top: 40px;
+}
+
+.borde-input {
+    border: none;
+    border-bottom: 3px solid #184059;
+}
+
+.recuperar {
+    margin-top: 60px;
+}
+
+#sec-principal a {
+    color: #5D8AA6;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.error {
+    border-bottom: 3px solid #8C2F1B;
+}
