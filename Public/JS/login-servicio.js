@@ -23,62 +23,16 @@ const validarCredencialesCliente = async(pCorreo, pContrasenna) => {
     return usuario;
 };
 
-const validarCredencialesParqueo = async(pCorreo, pContrasenna) => {
+const validarCredencialesModerador = async(pCorreo, pContrasenna) => {
     let respuesta = '';
     let usuario;
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/inicio-sesion_parqueo',
-            responseType: 'json',
-            data: {
-                correo: pCorreo,
-                contrasenna: pContrasenna
-            }
-        })
-        .then(response => {
-            sessionStorage.setItem('conectado', response.success);
-            usuario = response.data.usuario;
-        })
-        .catch(error => {
-            console.log(error);
-        });
-
-    return usuario;
-};
-
-const validarCredencialesEmpresa = async(pCorreo, pContrasenna) => {
-    let respuesta = '';
-    let usuario;
-    await axios({
-            method: 'post',
-            url: 'http://localhost:3000/api/inicio-sesion_empre',
+            url: 'http://localhost:3000/api/inicio-sesion_mod',
             responseType: 'json',
             data: {
                 correoEncEmp: pCorreo,
                 contrasennaEmp: pContrasenna
-            }
-        })
-        .then(response => {
-            sessionStorage.setItem('conectado', response.success);
-            usuario = response.data.usuario;
-        })
-        .catch(error => {
-            console.log(error);
-        });
-
-    return usuario;
-};
-
-const validarCredencialesEmpleado = async(pCorreo, pContrasenna) => {
-    let respuesta = '';
-    let usuario;
-    await axios({
-            method: 'post',
-            url: 'http://localhost:3000/api/',
-            responseType: 'json',
-            data: {
-                correo: pCorreo,
-                contrasenna: pContrasenna
             }
         })
         .then(response => {

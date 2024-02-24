@@ -92,7 +92,7 @@ const obtenerDatos = () => {
         let identificacion = inputIdentificacion.value;
         let fechaNacim = new Date(inputFechaNacim.value);
         let edad = calcularEdad(fechaNacim);
-        let correo = inputCorreo.value;
+        let correo = inputNombre.value;
         let telefono = inputTelefono.value;
         let foto = avatar.src;
 
@@ -112,9 +112,9 @@ const obtenerDatos = () => {
         }
 
         if (errorCorreo == false) {
-            inputCorreo.classList.add('error');
+            inputNombre.classList.add('error');
         } else {
-            inputCorreo.classList.remove('error');
+            inputNombre.classList.remove('error');
         }
 
         if (errorIdent == false) {
