@@ -46,7 +46,7 @@ const validarCredencialesModerador = async(pCorreo, pContrasenna) => {
     return usuario;
 };
 
-const validarCredencialesAdmin = async(pCorreo, pContrasenna) => {
+const validarCredencialesAdmin = async(pNombre, pContrasenna) => {
     let respuesta = '';
     let usuario;
     await axios({
@@ -54,7 +54,7 @@ const validarCredencialesAdmin = async(pCorreo, pContrasenna) => {
             url: 'http://localhost:3000/api/inicio-sesion_admin',
             responseType: 'json',
             data: {
-                correo: pCorreo,
+                correo: pNombre,
                 contrasenna: pContrasenna
             }
         })
