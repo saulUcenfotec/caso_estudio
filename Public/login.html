@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <div class="login-card">
+        <header id="header-principal">
+            <h1>
+                Temp Generator
+            </h1>
+        </header>
+        <main>
+            <section id="sec-principal">
+                <form>
+                    <div>
+                        <div class="text-inputs">
+                            <input type="email" id="txtEmail" placeholder="ejemplo@correo.com" class="borde-input" required>
+                            <div><label for="txtEmail" class="label-1">Ingresar correo electrónico</label></div>
+                        </div>
+                        <div class="text-inputs">
+                            <input type="password" id="txtPassword" placeholder="*********" class="borde-input" required>
+                            <div><label for="txtPassword" class="label-2">Ingresar contraseña</label></div>
+                        </div>
+                    </div>
+
+                    <p id="mensaje">Usuario o contraseña incorrectos</p>
+
+                    <div class="crear-cuenta">
+                        <a href="crearCuenta.html">Crear cuenta</a>
+                    </div>
+                    <div class="btn-container">
+                        <button type="button" id="btn-inciar">Iniciar sesión</button>
+                    </div>
+                </form>
+                <div class="recuperar">
+                    <a href="recuperar.html"> ¿Olvidaste tu contraseña?</a>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/login-servicio.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.float-right {
+    float: right;
+    ;
+}
+
+.float-left {
+    float: left;
+}
+
+#header-principal {
+    background: #294C61;
+    color: #ffffff;
+    display: flow-root;
+    height: 80px;
+}
+
+#header-principal .logo {
+    float: left;
+    margin-top: 22px;
+    margin-left: 50px;
+}
+
+#header-principal .logo span {
+    font-family: 'Merriweather', serif;
+    font-size: 35px;
+}
+
+#header-principal nav {
+    margin-top: 27.5px;
+    margin-left: 300px;
+}
+
+#header-principal nav a {
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 500;
+    text-decoration: none;
+    margin: 0 30px;
+}
+
+#header-principal nav a:last-child {
+    float: right;
+    margin-right: 50px;
+}
+
+
+/*ESTILOS DEL MAIN*/
+
+main h2 {
+    color: #184059;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 100px 0px;
+}
+
+main form {
+    display: flex;
+    justify-content: center;
+}
+
+main .formulario {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+columna-central {
+    margin-left: 175px;
+}
+
+main form input {
+    border: none;
+    border-bottom: 3px solid #184059;
+    font-size: 20px;
+    height: 24px;
+    margin-top: 18px;
+    width: 600px;
+}
+
+main form label {
+    align-self: flex-start;
+    color: #333333;
+    font-size: 20px;
+    margin-top: 18px;
+}
+
+main form #tipo-id {
+    border-bottom: 3px solid #184059;
+    font-size: 20px;
+    height: 40px;
+    margin-top: 18px;
+    width: 600px;
+}
+
+#foto-perfil {
+    border: 3px solid #d7d7d9;
+    border-radius: 50%;
+    height: 230px;
+    margin-top: 0px;
+    width: 230px;
+}
+
+#foto {
+    border-radius: 50%;
+    height: 230px;
+    width: 230px;
+}
+
+.formulario button {
+    background: #BF7B3F;
+    border: none;
+    border-radius: 81px;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    height: 100px;
+    margin-top: 20px;
+    width: 160px;
+}
+
+.formulario button:hover {
+    background: #935E2E;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    margin-top: 114px;
+}
+
+.boton {
+    border: none;
+    border-radius: 81px;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    height: 60px;
+    margin-bottom: 100px;
+    width: 350px;
+}
+
+.boton.derecha {
+    background: #BF7B3F;
+}
+
+.boton.derecha a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.boton.derecha:hover {
+    background: #935E2E;
+}
+
+.boton.izquierda {
+    background: #8C2F1B;
+    margin-right: 116px;
+}
+
+.boton.izquierda:hover {
+    background: #C66854;
+}
+
+
+/* Estilos Footer */
+
+footer {
+    text-align: center;
+    background: #184059;
+    color: #ffffff;
+}
+
+footer .padding-terra {
+    height: 50px;
+}
+
+footer .logo-terra {
+    background-image: url(../img/LogosScrum01.png);
+    background-size: cover;
+    background-position: center;
+    height: 109px;
+    width: 115px;
+    margin: 0 auto;
+}
+
+footer nav {
+    margin-top: 50px;
+}
+
+footer nav a {
+    color: #ffffff;
+    font-size: 27px;
+    text-decoration: none;
+    margin: 0 70px;
+    margin-top: 50px;
+}
+
+footer hr {
+    margin-top: 40px;
+    width: 85%;
+}
+
+footer p {
+    font-size: 28px;
+    margin-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+/*ERROR EN FORMULARIO*/
+
+.error {
+    border: 2px #c73d13 solid;
+}
