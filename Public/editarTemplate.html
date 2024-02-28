@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Spot</title>
+    <link rel="stylesheet" href="./css/template.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/CrearCuenta.css">
+    <title>Parking Spot</title>
+</head>
+
+<body>
+    <header id="header-principal">
+        <div class="logo">
+            <span>Temp Generator</span>
+        </div>
+    </header>
+    
+   
+    <div>
+        <textarea name="" id="texto-editable" cols="30" rows="10"></textarea>
+    </div>
+   
+       <div class="generator">
+        <button class="boton izquierda" onclick="window.location='template.html'">Volver a editar</button>
+       </div>
+       
+       <script>
+        window.onload = function() {
+            // Capturar el parámetro de la URL
+            var parametros = new URLSearchParams(window.location.search);
+            var texto = parametros.get('texto');
+
+            // Establecer el valor del textarea
+            document.getElementById('texto-editable').value = texto;
+        };
+       
+    </script>
+
+</body>
+
+</html>

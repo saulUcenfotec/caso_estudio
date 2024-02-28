@@ -16,26 +16,38 @@
         <div class="logo">
             <span>Temp Generator</span>
         </div>
-        
-        
-       <h1>Marcadores</h1>
-       <h4>Marcador 1</h4> 
-       <textarea></textarea>
-       <h4>Marcador 2</h4> 
-       <textarea></textarea>
-       <h4>Marcador 3</h4> 
-       <textarea></textarea>
-       <h4>Marcador 4</h4> 
-       <textarea></textarea>
-       <h4>Marcador 5</h4> 
-       <textarea></textarea>
-       <h4>Marcador 6</h4> 
-       <textarea></textarea>
-       <div class="generator">
-        <button class="boton izquierda">Generar</button>
-       </div>
-       
     </header>
+        
+    <h1>Marcadores</h1>
+    <h4>Marcador 1</h4> 
+    <textarea id="marcador1"></textarea>
+    <h4>Marcador 2</h4> 
+    <textarea id="marcador2"></textarea>
+    <h4>Marcador 3</h4> 
+    <textarea id="marcador3"></textarea>
+    <h4>Marcador 4</h4> 
+    <textarea id="marcador4"></textarea>
+    <h4>Marcador 5</h4> 
+    <textarea id="marcador5"></textarea>
+    <h4>Marcador 6</h4> 
+    <textarea id="marcador6"></textarea>
+    <div class="generator">
+        <button class="boton izquierda" onclick="transferirMarcador('marcador1', 'marcador2', 'marcador3', 'marcador4', 'marcador5', 'marcador6')">Generar</button>
+    </div>
+
+    <script>
+        function transferirMarcador(marcador1, marcador2, marcador3, marcador4, marcador5, marcador6) {
+            var valor1 = document.getElementById(marcador1).value;
+            var valor2 = document.getElementById(marcador2).value;
+            var valor3 = document.getElementById(marcador3).value;
+            var valor4 = document.getElementById(marcador4).value;
+            var valor5 = document.getElementById(marcador5).value;
+            var valor6 = document.getElementById(marcador6).value;
+            var texto = "Marcador 1:\n" + valor1 + "\n\nMarcador 2:\n" + valor2 + "\n\nMarcador 3:\n" + valor3 + "\n\nMarcador 4:\n" + valor4 + "\n\nMarcador 5:\n" + valor5 + "\n\nMarcador 6:\n" + valor6 + "\n\n";
+            var nw = window.open("editarTemplate.html?texto=" + encodeURIComponent(texto), "FORMATO", "resizable=1,width=1100,height=600,scrollbars=1");
+            nw.focus();
+        }
+    </script>
 
 </body>
 
