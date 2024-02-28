@@ -5,7 +5,7 @@ body {
 .textarea{
     display: flex;
     flex-direction: column;
-    padding-top: 100px;
+    padding-top: 20px;
     padding-right: 250px;
 }
 
@@ -14,3 +14,16 @@ textarea{
 }
 
 
+.template{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+input{ 
+       width: 50%;
+}
+
+select {
+    width: 50%;
+}
