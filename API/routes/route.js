@@ -8,6 +8,7 @@ const md = multiparty({});
 
 app.get('/usuarios', userController.getUsuario);
 app.post('/usuarios/crear', md, userController.createUsuario);
+app.post('/usuarios/login', md, userController.loginUsuario);
 
 
 module.exports = app;
