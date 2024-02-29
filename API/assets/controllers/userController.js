@@ -22,12 +22,15 @@ function createUsuario(req, res) {
 
 async function loginUsuario(req, res) {
     const payload = req.body;
+    console.log("avel");
+    console.log(payload);
     try {
         var usuario = await user.findOne({ nombre: req.body.nombre, contrasena: req.body.contrasena });
         if (usuario == null) {
             res.status(404).send("not found");
         } else {
-            res.status(200).send(usuario);
+            console.log(usuario);
+            res.status(200).send({ "usuario": usuario });
         }
     } catch (err) {
         console.log(err.message);
