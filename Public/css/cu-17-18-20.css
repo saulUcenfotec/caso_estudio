@@ -1,0 +1,271 @@
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+#ribbon {
+    align-items: center;
+    background-color: #184059;
+    display: inline-flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    height: 100px;
+    width: 100%;
+}
+
+#izq-rib {
+    display: inline-flex;
+}
+
+#logo-prin h1 {
+    color: #ffffff;
+    font-family: 'Merriweather', serif;
+    font-style: italic;
+    font-size: 35px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    width: 250px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.fa-bars {
+    color: #fff;
+    font-size: 50px;
+}
+
+.ddmenu {
+    background-color: #fff;
+    border-radius: 0px 0px 30px 30px;
+    display: none;
+    position: absolute;
+    right: 0;
+    width: 300px;
+    z-index: 1;
+}
+
+#bars {
+    height: 100px;
+    line-height: 125px;
+    text-align: center;
+    width: 100px;
+}
+
+#menu-avatar {
+    height: 100px;
+    margin-right: 20px;
+    overflow: auto;
+    width: 100px;
+}
+
+#avatar {
+    background-image: url('../img/Buck.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    height: 75px;
+    margin: 12px auto;
+    width: 75px;
+}
+
+.ddmenu a {
+    color: #184059;
+    display: table-cell;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    height: 80px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    width: 300px;
+}
+
+.dropdown:hover .ddmenu {
+    display: table;
+}
+
+.ddmenu a.current {
+    color: #fff;
+    background-color: #5d8aa6;
+}
+
+.menu-item {
+    border-left: 3px #d7d7d9 solid;
+    border-right: 3px #d7d7d9 solid;
+}
+
+.menu-item:last-child {
+    border-bottom: 3px #d7d7d9 solid;
+    border-radius: 0px 0px 30px 30px;
+    border-style: solid;
+    border-width: 0px 3px 3px 3px;
+}
+
+h2 {
+    color: #184059;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 60px auto 60px;
+}
+
+h3 {
+    color: #184059;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 70px;
+    text-align: center;
+}
+
+#forma-comp {
+    display: flow-root;
+    margin: 0 auto;
+    width: 1390px;
+}
+
+#campos-izq {
+    float: left;
+}
+
+#campos-der {
+    float: right;
+}
+
+.field {
+    border-style: none;
+    height: 25px;
+    width: 600px;
+}
+
+::placeholder {
+    font-size: 20px;
+}
+
+.underline {
+    border-color: #184059;
+    border-style: solid;
+    border-width: 0px 0px 3px 0px;
+    margin-bottom: 20px;
+    width: 600px;
+}
+
+.labels {
+    font-size: 20px;
+    margin-bottom: 60px;
+}
+
+#logo {
+    display: flow-root;
+    overflow: hidden;
+}
+
+#logo-izq {
+    float: left;
+}
+
+#logo-imag {
+    border: 3px #184059 solid;
+    height: 200px;
+    margin-bottom: 20px;
+    width: 200px;
+}
+
+#foto {
+    height: 200px;
+    width: 200px;
+}
+
+#pie-logo {
+    margin-bottom: 93px;
+    text-align: center;
+}
+
+#logo-der {
+    float: right;
+}
+
+#btn-logo {
+    margin-bottom: 20px;
+}
+
+#exp-p {
+    width: 300px;
+}
+
+#porc-p {
+    margin-bottom: 46px;
+    width: 600px;
+}
+
+#etiq-der {
+    margin-bottom: 128px;
+}
+
+#cambio-p {
+    margin-bottom: 46px;
+    width: 600px;
+}
+
+.btn {
+    border: none;
+    background-color: #BF7B3F;
+    border-radius: 25px;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    height: 50px;
+    width: 300px;
+}
+
+#guardar-cambios {
+    margin: 0px auto 65px;
+    width: 300px;
+}
+
+#footer-comp {
+    background-color: #8c2f1b;
+    height: 135px;
+}
+
+#footer-arriba {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 10px;
+    vertical-align: baseline;
+}
+
+.enlace-foot {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.btm-links {
+    margin-top: 15px;
+    text-align: center;
+    width: 200px;
+}
+
+#logo-foot {
+    background-image: url('../img/LogoBlancoPNG.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 50px;
+    width: 50px;
+}
+
+#linea {
+    border-top: 1px #fff solid;
+    margin: 0 auto;
+    width: 95%;
+}
+
+#tm {
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}

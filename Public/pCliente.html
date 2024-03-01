@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Info Administración</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/cu-17-18-20.css">
+</head>
+
+<body>
+    <header id="ribbon">
+        <div id="izq-rib">
+            <span id="logo-prin">
+                <h1>Temp Gen</h1>
+            </span>
+            <span class="dropdown">
+                <div id="bars"><i class="fas fa-bars"></i></div>
+                <div class="ddmenu">
+                    <div class="menu-item">
+                        <a href="">Ver perfil</a>
+                    </div>
+                    <div class="menu-item">
+                        <a href="template.html">Crear Template</a>
+                    </div>
+                    <div class="menu-item">
+                        <a href="editarTemplate.html" class="current">Editar template</a>
+                    </div>
+                </div>
+            </span>
+        </div>
+        <div class="dropdown">
+            <div id="menu-avatar">
+                <div id="avatar"></div>
+            </div>
+            <div class="ddmenu">
+                <a href="landing.html" class="menu-item">Cerrar sesión</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h2>Bienvenido Usuario</h2>
+        <section id="forma-comp">
+            <section id="campos-izq">
+                <h3>Crear</h3>
+
+                <div id="logo">
+                    <button class="btn" id="btn-logo" onclick="window.location='template.html'">Crear Template</button>
+                </div>
+
+            </section>
+            <section id="campos-der">
+                <h3>Editar</h3>
+                <div id="logo">
+                    <button class="btn" id="btn-logo" onclick="window.location='editarTemplate.html'">Editar Template</button>
+                </div>
+            </section>
+        </section>
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/e0274567d6.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
