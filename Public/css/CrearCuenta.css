@@ -83,6 +83,15 @@ main form input {
     width: 600px;
 }
 
+main form select {
+    border: none;
+    border-bottom: 3px solid #184059;
+    font-size: 20px;
+    height: 24px;
+    margin-top: 18px;
+    width: 600px;
+}
+
 main form label {
     align-self: flex-start;
     color: #333333;
