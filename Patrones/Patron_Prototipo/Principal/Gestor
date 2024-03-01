@@ -1,0 +1,34 @@
+class Template {
+    constructor(id, material, color, estampado) {
+        this.id = id;
+        this.material = material;
+        this.color = color;
+        this.estampado = estampado;
+    }
+
+    clone() {
+        return new Template(this.id, this.nombre, this.decription, this.estampado);
+    }
+
+    setColor(color) {
+        this.color = color;
+    }
+
+    setEstampado(estampado) {
+        this.estampado = estampado;
+    }
+
+    setNombre(nombre) {
+        this.nombre = nombre;
+    }
+
+    setSerie(serie) {
+        this.serie = serie;
+    }
+
+    getData() {
+        return `[${this.serie}] ${this.color} ${this.estampado} de ${this.material}`;
+    }
+}
+
+c
