@@ -36,9 +36,6 @@ const iniciarSesion = async() => {
     } else {
         cliente = await validarCredencialesCliente(nombre, inputContraseña.value);
 
-
-
-
         if (cliente) {
             mensaje1.style.color = '#ffffff'
             sessionStorage.setItem('usuarioCliente', JSON.stringify(cliente));
@@ -47,23 +44,6 @@ const iniciarSesion = async() => {
             mensaje1.style.color = '#8C2F1B'
         }
 
-
-        if (moderador) {
-            mensaje1.style.color = '#ffffff'
-            sessionStorage.setItem('usuarioMod', JSON.stringify(moderador));
-            location.href = "pMod.html"
-        } else {
-            mensaje1.style.color = '#8C2F1B'
-        }
-
-
-        if (admin) {
-            mensaje1.style.color = '#ffffff'
-            sessionStorage.setItem('usuarioAdmin', JSON.stringify(admin));
-            location.href = "pAdmin.html"
-        } else {
-            mensaje1.style.color = '#8C2F1B'
-        }
     }
 
 
