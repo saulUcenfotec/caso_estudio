@@ -87,3 +87,5 @@ class Template {
         return mData;
 
     }
+
+}
