@@ -1,9 +1,10 @@
 'use strict';
 
-let inputNombre1 = document.querySelector('#nombre1');
-let inputContra = document.querySelector('#contrasenna');
-let inputContra2 = document.querySelector('#contrasenna2');
+let inputNombre1 = document.querySelector('#nombre');
+let inputContra = document.querySelector('#contrasena');
+let inputContra2 = document.querySelector('#contrasena2');
 let btnAceptar = document.querySelector('.derecha');
+let select = document.getElementById("opciones");
 
 
 const validar = () => {
@@ -19,12 +20,40 @@ const validar = () => {
             inputsRequeridos[i].classList.remove('error');
         }
     }
+    if (select.value == 0) {
+        error = true;
+    }
+
     return error;
 };
 
-const comprobarNombre = (pNombre) => {
-    //valida que el nombre ingresado no exista en la base de datos
-    return true
+
+const comprobarNombre = async(pNombre) => {
+    var url = 'http://localhost:3000/usuarios/nombre';
+
+
+    const formData = new FormData();
+    formData.append('nombre', pNombre);
+    const opciones = {
+        method: 'POST', // Método de la solicitud
+
+        body: formData // Convertir el objeto de datos a JSON
+    };
+
+    let result;
+    await fetch(url, opciones)
+        .then(response => {
+            if (response.status == 200) {
+                result = false;
+            } else {
+                result = true;
+            }
+        })
+        .catch(error => {
+            console.log(error);
+        });
+
+    return result
 }
 
 const comprobarContra = (pContra1, pContra2) => {
@@ -72,7 +101,7 @@ const obtenerDatos = () => {
                 text: 'Sus cambios se han guardado correctamente.',
             })
 
-            registrar_cliente(nombre1, contra);
+            registrar_cliente(nombre1, contra, select.value);
 
             window.location.href = `codigo-cliente.html?correo=${correo}`
         }
