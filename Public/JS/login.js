@@ -1,6 +1,6 @@
 const btnIniciar = document.querySelector('#btn-inciar');
-const inputNombre = document.querySelector('#txtEmail');
-const inputContraseña = document.querySelector('#txtPassword');
+const inputNombre = document.querySelector('#nombre');
+const inputContraseña = document.querySelector('#contrasena');
 const mensaje1 = document.querySelector('#mensaje');
 
 const validar = () => {
@@ -35,8 +35,6 @@ const iniciarSesion = async() => {
         mensaje1.style.color = '#8C2F1B'
     } else {
         cliente = await validarCredencialesCliente(nombre, inputContraseña.value);
-        moderador = await validarCredencialesModerador(nombre, inputContraseña.value);
-        admin = await validarCredencialesAdmin(nombre, inputContraseña.value);
 
 
 
