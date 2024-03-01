@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="css/reset.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Raleway&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/CrearCuenta.css">
-    <title>Parking Spot</title>
+    <title>Registro</title>
 </head>
 
 <body>
     <header id="header-principal">
         <div class="logo">
-            <span>Temp Generator</span>
+            <span>Crear cuenta</span>
         </div>
 
         <nav class="nav1">
@@ -30,16 +30,27 @@
         <form>
             <div class="columna-central">
                 <div class="formulario">
-                    <input type="text" placeholder="Nombre" id="nombre1" required>
-                    <label for="nombre1">Primer nombre</label>
+                    <input type="text" placeholder="Nombre" id="nombre">
+                    <label for="nombre">Nombre de usuario</label>
                 </div>
                 <div class="formulario">
-                    <input type="password" placeholder="Password" id="contrasenna">
-                    <label for="nombre2">Password</label>
+                    <input type="password" placeholder="Contraseña" id="contrasena">
+                    <label for="contrasena">Contraseña</label>
                 </div>
                 <div class="formulario">
-                    <input type="password" placeholder="Confirm Password" id="contrasenna2" required>
-                    <label for="apellido1">Confirm Password</label>
+                    <input type="password" placeholder="Contraseña" id="contrasena2">
+                    <label for="contrasena2">Confirmar contraseña</label>
+                </div>
+                <br><br>
+
+                <div class="formulario">
+                    <p>Que le gustaria poder realizar?</p>
+                    <select id="opciones">
+                        <option selected disabled class="d-none" value="0">Escoja una opcion</option>
+                        <option value="CPlantilla">Crear plantillas y documentos</option>
+                        <option value="GPlantilla">Gestionar las plantillas que ya esten creadas</option>
+                        <option value="GUsuario">Gestionar los usuarios deel sistema</option>
+                    </select>
                 </div>
             </div>
 

@@ -26,13 +26,6 @@ start();
 
 app.use('', userRoutes);
 
-app.get('/', (req, res) => {
-    res.send('../' + __dirname);
-});
-
-app.get('/login', (req, res) => {
-    res.sendFile(path.join(ruta, 'login.html'));
-})
 
 app.listen(port, () => {
     console.log(`Express backend running on localhost: ${port}`);
