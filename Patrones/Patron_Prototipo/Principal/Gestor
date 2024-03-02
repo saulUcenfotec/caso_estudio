@@ -1,17 +1,51 @@
 class Gestor {
-    constructor(pId_publico, pIdPrivado) {
+
+
+    constructor(pId_publico, pId_Privado) {
         this.arrTemplates = [];
         this.iD_Publico = pId_publico;
-        this.iD_Privado = pIdPrivado;
-        //this.prototipoPublico = new 
-
+        this.iD_Privado = pId_Privado;
+        this.prototipoPublico = new Template_Publico(pId_publico, "Test Nombre", "Descripcion", "Texto");
+        this.prototipoPrivado = new Template_Privado(pId_Privado, "Test Nombre", "Descripcion", "Texto");
     }
 
     nuevo_template(pNum) {
         let mSerie;
         if (Helper.esMultiplo(pNum, 2)) {
-            this
+            this.arrTemplates.push(this.prototipoPublico.clone());
+            this.iD_Publico++;
+            mSerie = this.iD_Publico;
+        } else {
+            this.arrTemplates.push(this.prototipoPrivado.clone());
+            this.iD_Privado++;
+            mSerie = this.iD_Privado;
         }
 
+
+        this.updateCloneTemplate(pNum, mSerie);
+
+    }
+
+    updateCloneTemplate(pId, pSerie) {
+        let cc = this.arrTemplates[pId];
+        cc.setDescripcion(Helper.cambioDescripcion(Helper.ramdomize()));
+        cc.setNombre("Prototipo " + pSerie);
+        cc.setId(Helper.generarID())
+    }
+
+    obtenerDatos(pid) {
+        return this.obtenerDatosObjeto(this.arrTemplatesW[pid]) + "\n";
+    }
+
+    obtenerDatos() {
+        let mResult = "";
+        for (let mOb of this.arrTemplates) {
+            mResult += this.obtenerDatosObjeto(mOb) + "\n";
+        }
+        return mResult;
+    }
+
+    obtenerDatosObjeto(pObj) {
+        return pObj.getData() + "\n";
     }
 }

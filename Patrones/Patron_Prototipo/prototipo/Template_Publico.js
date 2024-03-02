@@ -1,8 +1,8 @@
 class Template_Publico extends Template {
-    constructor(pID, pDescripcion, pTexto) {
+    constructor(pID, pNombre, pDescripcion, pTexto) {
         super();
         this.setId(pID);
-        this.setNombre();
+        this.setNombre(pNombre);
         this.setDescripcion(pDescripcion);
         this.setCategoria(1);
         this.setPalabrasClave([]);

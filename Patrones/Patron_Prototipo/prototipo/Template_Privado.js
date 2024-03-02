@@ -15,7 +15,7 @@ class Template_Privado extends Template {
 
 
     clone() {
-        return new Template_Publico(this.getId, this.getNombre, this.getDescripcion, this.getPalabrasClave, this.getTexto, this.parametrosEditables, this.getEstado)
+        return new Template_Privado(this.getId, this.getNombre, this.getDescripcion, this.getPalabrasClave, this.getTexto, this.parametrosEditables, this.getEstado)
     }
 
 }

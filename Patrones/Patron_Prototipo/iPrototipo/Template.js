@@ -77,7 +77,7 @@ class Template {
 
     getData() {
         let mData = "< Sobre este producto >\n";
-        mData += "ID: " + this.getID() + "\n";
+        mData += "ID: " + this.getId() + "\n";
         mData += "Descripcion: " + this.getDescripcion() + "\n";
         mData += "Categoría: " + this.getCategoria() + "\n";
         mData += "Palabras clave: " + this.getPalabrasClave() + "\n";
