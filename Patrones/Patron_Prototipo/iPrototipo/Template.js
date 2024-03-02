@@ -31,7 +31,7 @@ class Template {
         return this.descripcion;
     }
 
-    setNombre(descripcion) {
+    setDescripcion(descripcion) {
         this.descripcion = descripcion;
     }
 
@@ -86,6 +86,11 @@ class Template {
         mData += "Estado: " + this.getEstado() + "\n";
         return mData;
 
+    }
+
+    clone() {
+        // Implementation of clone method should be provided in subclasses
+        throw new Error("Method 'clone' must be implemented in subclasses");
     }
 
 }

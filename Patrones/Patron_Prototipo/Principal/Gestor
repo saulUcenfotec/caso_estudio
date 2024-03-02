@@ -1,34 +1,17 @@
-class Template {
-    constructor(id, material, color, estampado) {
-        this.id = id;
-        this.material = material;
-        this.color = color;
-        this.estampado = estampado;
+class Gestor {
+    constructor(pId_publico, pIdPrivado) {
+        this.arrTemplates = [];
+        this.iD_Publico = pId_publico;
+        this.iD_Privado = pIdPrivado;
+        //this.prototipoPublico = new 
+
     }
 
-    clone() {
-        return new Template(this.id, this.nombre, this.decription, this.estampado);
-    }
+    nuevo_template(pNum) {
+        let mSerie;
+        if (Helper.esMultiplo(pNum, 2)) {
+            this
+        }
 
-    setColor(color) {
-        this.color = color;
-    }
-
-    setEstampado(estampado) {
-        this.estampado = estampado;
-    }
-
-    setNombre(nombre) {
-        this.nombre = nombre;
-    }
-
-    setSerie(serie) {
-        this.serie = serie;
-    }
-
-    getData() {
-        return `[${this.serie}] ${this.color} ${this.estampado} de ${this.material}`;
     }
 }
-
-c
