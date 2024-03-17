@@ -17,17 +17,23 @@
             <span>Temp Generator</span>
         </div>
     </header>
-    
-   
+
     <div>
         <textarea name="" id="texto-editable" cols="30" rows="10"></textarea>
     </div>
-   
-       <div class="generator">
-        <button class="boton izquierda" onclick="window.location='template.html'">Volver a editar</button>
-       </div>
-       
-       <script>
+    <h1>Marcadores</h1>
+    <input type="text" id="marcador1" placeholder="Marcador 1">
+    <input type="text" id="marcador2" placeholder="Marcador 2">
+    <input type="text" id="marcador3" placeholder="Marcador 3">
+    <input type="text" id="marcador4" placeholder="Marcador 4">
+    <input type="text" id="marcador5" placeholder="Marcador 5">
+    <input type="text" id="marcador6" placeholder="Marcador 6">
+
+    <div class="generator">
+        <button class="boton izquierda" onclick="transferirTexto()">Generar</button>
+    </div>
+
+    <script>
         window.onload = function() {
             // Capturar el parámetro de la URL
             var parametros = new URLSearchParams(window.location.search);
@@ -36,7 +42,30 @@
             // Establecer el valor del textarea
             document.getElementById('texto-editable').value = texto;
         };
-       
+
+        function transferirTexto() {
+            // Obtener el valor del textarea
+            var texto = document.getElementById("texto-editable").value;
+
+            // Obtener los valores de los marcadores
+            var valor1 = document.getElementById("marcador1").value;
+            var valor2 = document.getElementById("marcador2").value;
+            var valor3 = document.getElementById("marcador3").value;
+            var valor4 = document.getElementById("marcador4").value;
+            var valor5 = document.getElementById("marcador5").value;
+            var valor6 = document.getElementById("marcador6").value;
+
+            // Reemplazar los marcadores con los valores
+            texto = texto.replace(/\[1\]/g, valor1);
+            texto = texto.replace(/\[2\]/g, valor2);
+            texto = texto.replace(/\[3\]/g, valor3);
+            texto = texto.replace(/\[4\]/g, valor4);
+            texto = texto.replace(/\[5\]/g, valor5);
+            texto = texto.replace(/\[6\]/g, valor6);
+
+            // Redirigir a la página de edición con el texto modificado
+            window.location = "editarTemplate.html?texto=" + encodeURIComponent(texto);
+        }
     </script>
 
 </body>
