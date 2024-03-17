@@ -34,47 +34,19 @@
         <textarea name="" id="template" cols="30" rows="10" ></textarea>
     </div>
 
-
-    <h1>Marcadores</h1>
-    <input type="text" id="marcador1" placeholder="Marcador 1">
-    <input type="text" id="marcador2" placeholder="Marcador 2">
-    <input type="text" id="marcador3" placeholder="Marcador 3">
-    <input type="text" id="marcador4" placeholder="Marcador 4">
-    <input type="text" id="marcador5" placeholder="Marcador 5">
-    <input type="text" id="marcador6" placeholder="Marcador 6">
-
     <div class="generator">
-        <button class="boton izquierda" onclick="transferirMarcador('marcador1', 'marcador2', 'marcador3', 'marcador4', 'marcador5', 'marcador6')">Generar</button>
+        <button class="boton izquierda" onclick="transferirTexto()">Generar</button>
     </div>
 
     <script>
-  function transferirMarcador(marcador1, marcador2, marcador3, marcador4, marcador5, marcador6) {
-    // Obtener los valores de los marcadores
-    var valor1 = document.getElementById(marcador1).value;
-    var valor2 = document.getElementById(marcador2).value;
-    var valor3 = document.getElementById(marcador3).value;
-    var valor4 = document.getElementById(marcador4).value;
-    var valor5 = document.getElementById(marcador5).value;
-    var valor6 = document.getElementById(marcador6).value;
+        function transferirTexto() {
+            // Obtener el valor del textarea
+            var textoPlantilla = document.getElementById("template").value;
 
-    // Aca agarro el id template del textarea asi usando un replace que identifica hasta al marcador [6] que se remplaza con los valores
-    var textoPlantilla = document.getElementById("template").value;
-
-    
-    textoPlantilla = textoPlantilla.replace(/\[1\]/g, valor1);
-    textoPlantilla = textoPlantilla.replace(/\[2\]/g, valor2);
-    textoPlantilla = textoPlantilla.replace(/\[3\]/g, valor3);
-    textoPlantilla = textoPlantilla.replace(/\[4\]/g, valor4);
-    textoPlantilla = textoPlantilla.replace(/\[5\]/g, valor5);
-    textoPlantilla = textoPlantilla.replace(/\[6\]/g, valor6);
-
-    
-    var nw = window.open("editarTemplate.html?texto=" + encodeURIComponent(textoPlantilla), "FORMATO", "resizable=1,width=1100,height=600,scrollbars=1");
-    nw.focus();
-}
-
-
-   
+            // Abrir la otra página y pasar el texto como parámetro
+            var nw = window.open("editarTemplate.html?texto=" + encodeURIComponent(textoPlantilla), "FORMATO", "resizable=1,width=1100,height=600,scrollbars=1");
+            nw.focus();
+        }
     </script>
 
 </body>
