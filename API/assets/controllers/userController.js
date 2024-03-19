@@ -22,8 +22,8 @@ function createUsuario(req, res) {
             break;
     }
     user.create(payload).then(response => {
-            res.status(200).send({ "usuario": response });
-        })
+        res.status(200).send({ "usuario": response });
+    })
         .catch(err => {
             res.status(500).send({ response: err });
         })
@@ -57,6 +57,8 @@ async function nombreUsuario(req, res) {
         res.status(404).send("not found");
     }
 }
+
+
 module.exports = {
     getUsuario,
     createUsuario,
