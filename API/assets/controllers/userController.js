@@ -80,6 +80,7 @@ async function nombreUsuario(req, res) {
 }
 
 // Exporta las funciones para que estén disponibles para otros archivos
+
 module.exports = {
     getUsuario,
     createUsuario,
