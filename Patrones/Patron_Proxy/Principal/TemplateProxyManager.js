@@ -1,20 +1,18 @@
+const TemplateProxy = require("../Implementacion/TemplateProxy");
+
 class TemplateProxyManager {
-  constructor() {
-    this.baseUrl = "http://localhost:3000/usuarios/login"; // La URL base de tu backend
+  constructor(username, password, id) {
+    this.baseUrl = "http://localhost:3000/buscarTemplatePorId";
+    this.username = username;
+    this.password = password;
+    this.id = id;
   }
 
-  async accederTemplate(username, password, templateId) {
+  async accederTemplate(templateId) {
     try {
-      const response = await fetch(`${this.baseUrl}/acceder-template`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username,
-          password,
-          templateId,
-        }),
+      // Realizar solicitud GET para obtener información sobre el template
+      const response = await fetch(`${this.baseUrl}?templateId=${templateId}`, {
+        method: "GET",
       });
 
       if (!response.ok) {
@@ -22,10 +20,31 @@ class TemplateProxyManager {
       }
 
       const data = await response.json();
-      return data; // Suponiendo que el backend devuelve alguna información sobre el template
+
+      const categoria = data.templates[0].categoria;
+
+      const userId = data.templates[0].userId;
+
+      const ProxyTemplate = new TemplateProxy(userId);
+
+      let validación = ProxyTemplate.acceder(
+        this.id,
+        this.username,
+        this.password,
+        userId,
+        categoria
+      );
+
+      if (validación === "Tiene acceso al template.") {
+        return true;
+      } else {
+        return false;
+      }
     } catch (error) {
       console.error("Error:", error);
-      throw error; // Propaga el error para que pueda ser manejado por el código que llama a esta función
+      throw error;
     }
   }
 }
+
+module.exports = TemplateProxyManager;

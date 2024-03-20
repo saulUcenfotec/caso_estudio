@@ -13,6 +13,7 @@ const multiparty = require("connect-multiparty");
 
 // Importa la biblioteca path para trabajar con rutas de archivos y directorios
 const path = require("path");
+const TemplateProxyManager = require("../../Patrones/Patron_Proxy/Principal/TemplateProxyManager");
 
 // Define la ruta del directorio 'Public'
 const ruta = path.join(__dirname, "../..", "Public");
@@ -34,7 +35,8 @@ app.post("/usuarios/login", md, userController.loginUsuario);
 app.post("/templates/crear", md, templateController.createTemplate);
 
 // Ruta para consultar template por id o nombre
-app.get("/verTemplates/:userId", templateController.userIdTemplate);
+app.get("/buscarTemplate/", templateController.userIdTemplate);
+app.get("/buscarTemplatePorId", templateController.templateIdTemplate);
 
 // Ruta para enviar el archivo HTML de inicio de sesión
 app.get("/login", (req, res) => {
@@ -76,5 +78,27 @@ app.get("/cliente", (req, res) => {
   res.sendFile(path.join(ruta, "CrearCuenta.html"));
 });
 
+// Definir la ruta que manejará las solicitudes GET con parámetros
+app.get("/proxy", async (req, res) => {
+  try {
+    const usuarioNombre = req.query.usuarioNombre;
+    const usuarioPass = req.query.usarioPass;
+    const usuarioId = req.query.usuarioId;
+    const tempId = req.query.tempId;
+
+    const Gestor = new TemplateProxyManager(
+      usuarioNombre,
+      usuarioPass,
+      usuarioId
+    );
+
+    const resultado = await Gestor.accederTemplate(tempId);
+
+    res.json(resultado);
+  } catch (error) {
+    console.error("Error al procesar la solicitud:", error);
+    res.status(500).json({ error: "Error interno del servidor" });
+  }
+});
 // Exporta la aplicación Express para que esté disponible para otros archivos
 module.exports = app;

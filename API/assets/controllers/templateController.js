@@ -1,13 +1,12 @@
-const template = require("../models/template");
+const Template = require("../models/template");
 
 function getTemplate(req, res) {
-  template
-    .find()
+  Template.find()
     .then((response) => {
-      res.status(200).send({ response });
+      res.status(200).send({ templates: response });
     })
     .catch((err) => {
-      res.status(500).send({ response: err });
+      res.status(500).send({ error: err });
     });
 }
 
@@ -26,40 +25,63 @@ function createTemplate(req, res) {
       payload.categoria = 3;
       break;
   }
-  template
-    .create(payload)
+
+  Template.create(payload)
     .then((response) => {
       res.status(200).send({ template: response });
     })
     .catch((err) => {
-      res.status(500).send({ response: err });
+      res.status(500).send({ error: err });
     });
 }
+
 async function nombreTemplate(req, res) {
   try {
-    var template = await user.findOne({ nombre: req.body.nombre });
-    if (template == null || template == "") {
-      res.status(404).send("");
+    const template = await Template.findOne({ nombre: req.body.nombre });
+    if (!template) {
+      res.status(404).send("Template no encontrado");
     } else {
-      res.status(200).send("");
+      res.status(200).send({ template });
     }
   } catch (err) {
-    console.log(err.message);
-    res.status(404).send("not found");
+    console.error(err.message);
+    res.status(500).send("Internal Server Error");
   }
 }
 
 async function userIdTemplate(req, res) {
   try {
-    var template = await user.findOne({ userId: req.body.userId });
-    if (template == null || template == "") {
-      res.status(404).send("");
-    } else {
-      res.status(200).send("");
+    const userId = req.query.userId;
+
+    if (!userId) {
+      return res.status(400).json({
+        error: "Debe proporcionar userId en los parámetros de consulta.",
+      });
     }
+
+    const templates = await Template.find({ userId });
+    res.status(200).json({ templates });
   } catch (err) {
-    console.log(err.message);
-    res.status(404).send("not found");
+    console.error(err);
+    res.status(500).json({ error: "Error interno del servidor" });
+  }
+}
+
+async function templateIdTemplate(req, res) {
+  try {
+    const templateId = req.query.templateId;
+
+    if (!templateId) {
+      return res.status(400).json({
+        error: "Debe proporcionar templateId en los parámetros de consulta.",
+      });
+    }
+
+    const templates = await Template.find({ _id: templateId });
+    res.status(200).json({ templates });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Error interno del servidor" });
   }
 }
 
@@ -68,4 +90,5 @@ module.exports = {
   createTemplate,
   nombreTemplate,
   userIdTemplate,
+  templateIdTemplate,
 };
