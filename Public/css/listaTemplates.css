@@ -1,0 +1,44 @@
+.template-list {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    border: red 1px solid;
+    gap: 30px;
+}
+
+.temp-btn {
+    width: 60%;
+    height: 30px;
+    border-radius: 30px;
+    border: none;
+    background-color: #BF7B3F;
+    color: #fff;
+    font-weight: bold;
+    align-self: center;
+}
+
+.template-box{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    gap: 10px;
+    width:420px;
+    max-height: 200px;
+    border: 1px solid lightgray;
+    box-shadow: 2px 2px 8px 4px #949494d1;
+    border-radius:15px;
+    padding: 10px;
+}
+
+.template-box p{
+    font-size: 16px;
+    color: #184059;
+    font-weight: bold;
+}
+
+.template-box h3{
+    text-align: left;
+    margin-bottom: 0;
+}
