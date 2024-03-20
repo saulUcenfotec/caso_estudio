@@ -24,7 +24,7 @@ const validarCredencialesCliente = async(pNombre, pDescripcion, pCategoria, pTex
     formData.append('descripcion', pDescripcion);
     formData.append('categoria', pCategoria);
     formData.append('texto', pTexto);
-    formData.append('paramtros', pParametrosEditables);
+    formData.append('parametros', pParametrosEditables);
     const opciones = {
         method: 'POST', // Método de la solicitud
 
