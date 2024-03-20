@@ -37,6 +37,10 @@ app.get("/login", (req, res) => {
   res.sendFile(path.join(ruta, "login.html"));
 });
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(ruta, 'login.html'));
+});
+
 // Ruta para enviar el archivo HTML de registro de usuario
 app.get("/registro", (req, res) => {
   res.sendFile(path.join(ruta, "CrearCuenta.html"));
@@ -49,9 +53,14 @@ app.get("/registroTemplate", (req, res) => {
   res.sendFile(path.join(ruta, "template.html"));
 });
 
-app.get("/clienteTemplate", (req, res) => {
-  res.sendFile(path.join(ruta, "template.html"));
-});
+app.get('/registroTemplate', (req, res) => {
+    res.sendFile(path.join(ruta, 'template.html'))
+})
+
+app.get('/clienteTemplate', (req, res) => {
+    res.sendFile(path.join(ruta, 'template.html'))
+})
+
 
 app.get("/templates", (req, res) => {
   res.sendFile(path.join(ruta, "listaTemplates.html"));

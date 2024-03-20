@@ -31,17 +31,38 @@ const port = 3000;
 // Importa las rutas de usuario desde el archivo 'route.js'
 const userRoutes = require('./routes/route');
 
-// Función asincrónica para conectar a la base de datos MongoDB Atlas
-async function start() {
-    try {
-        await mongoose.connect(uri); // Conecta a la base de datos utilizando la URI
-    } catch (err) {
-        console.log(err); // Si hay un error, imprime el mensaje de error en la consola
-    }
-}
+//Patron Singleton
+const Singleton = (function () {
+    let instance;
 
-// Llama a la función 'start' para conectar a la base de datos
-start();
+    function createInstance() {
+        async function start() {
+            try {
+                await mongoose.connect(uri);
+            } catch (err) {
+                console.log(err);
+            }
+        }
+
+        return {
+            start: start
+        };
+    }
+
+    return {
+        getInstance: function () {
+            if (!instance) {
+                instance = createInstance();
+            }
+            return instance;
+        }
+    };
+})();
+
+const instance1 = Singleton.getInstance();
+
+
+instance1.start();
 
 // Utiliza las rutas de usuario en la aplicación Express
 app.use('', userRoutes);
