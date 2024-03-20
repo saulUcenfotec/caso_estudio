@@ -1,6 +1,10 @@
 function transferirTexto() {
     // Obtener el valor del textarea
     var textoPlantilla = document.getElementById("template").value;
+    var nombrePlantila = document.getElementById("campoNombre").value;
+    var descripcionPlantilla = document.getElementById("campoDescripcion").value;
+    var categoriaPlantilla = document.getElementById("campoCategoria").value;
+
 
     // Abrir la otra página y pasar el texto como parámetro
     var nw = window.open("editarTemplate.html?texto=" + encodeURIComponent(textoPlantilla), "FORMATO", "resizable=1,width=1100,height=600,scrollbars=1");
@@ -11,7 +15,7 @@ function transferirTexto() {
 
 var url = "";
 
-const validarCredencialesCliente = async(pNombre, pDescripcion, pCategoria) => {
+const validarCredencialesCliente = async(pNombre, pDescripcion, pCategoria, pTexto, pParametrosEditables) => {
     url = 'http://localhost:3000/templates/crear';
 
 
@@ -19,6 +23,8 @@ const validarCredencialesCliente = async(pNombre, pDescripcion, pCategoria) => {
     formData.append('nombre', pNombre);
     formData.append('descripcion', pDescripcion);
     formData.append('categoria', pCategoria);
+    formData.append('texto', pTexto);
+    formData.append('paramtros', pParametrosEditables);
     const opciones = {
         method: 'POST', // Método de la solicitud
 
