@@ -39,6 +39,7 @@ const validarCredencialesCliente = async (
 
   // Obtener el ID del usuario del objeto JavaScript
   const usuarioId = usuarioObjeto.usuario._id;
+  const usuarioNombre = usuarioObjeto.usuario.nombre;
   const formData = new FormData();
   formData.append("nombre", pNombre);
   formData.append("descripcion", pDescripcion);
@@ -46,6 +47,7 @@ const validarCredencialesCliente = async (
   formData.append("texto", pTexto);
   formData.append("parametros", "Lista de parametros");
   formData.append("userId", usuarioId);
+  formData.append("userName", usuarioNombre);
   const opciones = {
     method: "POST", // Método de la solicitud
 

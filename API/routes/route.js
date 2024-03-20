@@ -24,6 +24,7 @@ const md = multiparty({});
 
 // Ruta para obtener todos los usuarios
 app.get("/usuarios", userController.getUsuario);
+app.get("/verTemplates", templateController.getTemplate);
 
 // Ruta para crear un nuevo usuario
 app.post("/usuarios/crear", md, userController.createUsuario);
@@ -32,13 +33,16 @@ app.post("/usuarios/crear", md, userController.createUsuario);
 app.post("/usuarios/login", md, userController.loginUsuario);
 app.post("/templates/crear", md, templateController.createTemplate);
 
+// Ruta para consultar template por id o nombre
+app.get("/verTemplates/:userId", templateController.userIdTemplate);
+
 // Ruta para enviar el archivo HTML de inicio de sesión
 app.get("/login", (req, res) => {
   res.sendFile(path.join(ruta, "login.html"));
 });
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(ruta, 'login.html'));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(ruta, "login.html"));
 });
 
 // Ruta para enviar el archivo HTML de registro de usuario
@@ -53,14 +57,13 @@ app.get("/registroTemplate", (req, res) => {
   res.sendFile(path.join(ruta, "template.html"));
 });
 
-app.get('/registroTemplate', (req, res) => {
-    res.sendFile(path.join(ruta, 'template.html'))
-})
+app.get("/registroTemplate", (req, res) => {
+  res.sendFile(path.join(ruta, "template.html"));
+});
 
-app.get('/clienteTemplate', (req, res) => {
-    res.sendFile(path.join(ruta, 'template.html'))
-})
-
+app.get("/clienteTemplate", (req, res) => {
+  res.sendFile(path.join(ruta, "template.html"));
+});
 
 app.get("/templates", (req, res) => {
   res.sendFile(path.join(ruta, "listaTemplates.html"));

@@ -48,8 +48,24 @@ async function nombreTemplate(req, res) {
     res.status(404).send("not found");
   }
 }
+
+async function userIdTemplate(req, res) {
+  try {
+    var template = await user.findOne({ userId: req.body.userId });
+    if (template == null || template == "") {
+      res.status(404).send("");
+    } else {
+      res.status(200).send("");
+    }
+  } catch (err) {
+    console.log(err.message);
+    res.status(404).send("not found");
+  }
+}
+
 module.exports = {
   getTemplate,
   createTemplate,
   nombreTemplate,
+  userIdTemplate,
 };
