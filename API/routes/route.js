@@ -37,6 +37,10 @@ app.get('/login', (req, res) => {
     res.sendFile(path.join(ruta, 'login.html'));
 });
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(ruta, 'login.html'));
+});
+
 // Ruta para enviar el archivo HTML de registro de usuario
 app.get('/registro', (req, res) => {
     res.sendFile(path.join(ruta, 'CrearCuenta.html'));
@@ -46,11 +50,11 @@ app.get('/registro', (req, res) => {
 app.post('/usuarios/nombre', md, userController.nombreUsuario);
 
 
-app.get('/registroTemplate', (req,res)=> {
+app.get('/registroTemplate', (req, res) => {
     res.sendFile(path.join(ruta, 'template.html'))
 })
 
-app.get('/clienteTemplate',(req, res) =>{
+app.get('/clienteTemplate', (req, res) => {
     res.sendFile(path.join(ruta, 'template.html'))
 })
 
