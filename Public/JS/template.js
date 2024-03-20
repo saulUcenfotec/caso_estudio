@@ -1,54 +1,76 @@
 async function transferirTexto() {
-    // Obtener el valor del textarea
-    var textoPlantilla = document.getElementById("template").value;
-    var nombrePlantila = document.getElementById("campoNombre").value;
-    var descripcionPlantilla = document.getElementById("campoDescripcion").value;
-    var categoriaPlantilla = document.getElementById("campoCategoria").value;
+  // Obtener el valor del textarea
+  var textoPlantilla = document.getElementById("template").value;
+  var nombrePlantila = document.getElementById("campoNombre").value;
+  var descripcionPlantilla = document.getElementById("campoDescripcion").value;
+  var categoriaPlantilla = document.getElementById("campoCategoria").value;
 
-    await validarCredencialesCliente(nombrePlantila, descripcionPlantilla, categoriaPlantilla, textoPlantilla);
+  await validarCredencialesCliente(
+    nombrePlantila,
+    descripcionPlantilla,
+    categoriaPlantilla,
+    textoPlantilla
+  );
 
-    // Abrir la otra página y pasar el texto como parámetro
-    var nw = window.open("editarTemplate.html?texto=" + encodeURIComponent(textoPlantilla), "FORMATO", "resizable=1,width=1100,height=600,scrollbars=1");
-    nw.focus();
+  // Abrir la otra página y pasar el texto como parámetro
+  var nw = window.open(
+    "editarTemplate.html?texto=" + encodeURIComponent(textoPlantilla),
+    "FORMATO",
+    "resizable=1,width=1100,height=600,scrollbars=1"
+  );
+  nw.focus();
 }
-
-
 
 var url = "";
 
-const validarCredencialesCliente = async(pNombre, pDescripcion, pCategoria, pTexto) => {
-    url = 'http://localhost:3000/templates/crear';
+const validarCredencialesCliente = async (
+  pNombre,
+  pDescripcion,
+  pCategoria,
+  pTexto
+) => {
+  url = "http://localhost:3000/templates/crear";
 
+  // Obtener el JSON almacenado en sessionStorage
+  const usuarioJson = sessionStorage.getItem("usuarioCliente");
 
-    const formData = new FormData();
-    formData.append('nombre', pNombre);
-    formData.append('descripcion', pDescripcion);
-    formData.append('categoria', pCategoria);
-    formData.append('texto', pTexto);
-    formData.append('parametros', "Lista de parametros");
-    const opciones = {
-        method: 'POST', // Método de la solicitud
+  // Convertir el JSON a un objeto JavaScript
+  const usuarioObjeto = JSON.parse(usuarioJson);
 
-        body: formData // Convertir el objeto de datos a JSON
-    };
+  // Obtener el ID del usuario del objeto JavaScript
+  const usuarioId = usuarioObjeto.usuario._id;
+  const formData = new FormData();
+  formData.append("nombre", pNombre);
+  formData.append("descripcion", pDescripcion);
+  formData.append("categoria", pCategoria);
+  formData.append("texto", pTexto);
+  formData.append("parametros", "Lista de parametros");
+  formData.append("userId", usuarioId);
+  const opciones = {
+    method: "POST", // Método de la solicitud
 
-    let template;
-    await fetch(url, opciones)
-        .then(response => {
-            if (response.status == 200) {
-                return response.json();
-            } else {
-                return null;
-            }
-        }).then(data => {
-            if (data != null) {
-                //window.location.href = '/';
-                template = data;
-            } else {}
-        })
-        .catch(error => {
-            console.log(error);
-        });
+    body: formData, // Convertir el objeto de datos a JSON
+  };
 
-    return template;
+  let template;
+  await fetch(url, opciones)
+    .then((response) => {
+      if (response.status == 200) {
+        return response.json();
+      } else {
+        return null;
+      }
+    })
+    .then((data) => {
+      if (data != null) {
+        //window.location.href = '/';
+        template = data;
+      } else {
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+  return template;
 };

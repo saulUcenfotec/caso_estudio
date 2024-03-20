@@ -1,13 +1,14 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const templateSchema = mongoose.Schema({
-    nombre: String,
-    descripcion: String,
-    categoria: String,
-    palabrasClave: String,
-    texto: String,
-    parametros: String,
-    estado: Boolean,
+  nombre: String,
+  descripcion: String,
+  categoria: String,
+  palabrasClave: String,
+  texto: String,
+  parametros: String,
+  estado: Boolean,
+  userId: String,
 });
 
-module.exports = mongoose.model('templates', templateSchema);
+module.exports = mongoose.model("templates", templateSchema);
