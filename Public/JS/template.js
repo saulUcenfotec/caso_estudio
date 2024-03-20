@@ -1,10 +1,11 @@
-function transferirTexto() {
+async function transferirTexto() {
     // Obtener el valor del textarea
     var textoPlantilla = document.getElementById("template").value;
     var nombrePlantila = document.getElementById("campoNombre").value;
     var descripcionPlantilla = document.getElementById("campoDescripcion").value;
     var categoriaPlantilla = document.getElementById("campoCategoria").value;
 
+    await validarCredencialesCliente(nombrePlantila, descripcionPlantilla, categoriaPlantilla, textoPlantilla);
 
     // Abrir la otra página y pasar el texto como parámetro
     var nw = window.open("editarTemplate.html?texto=" + encodeURIComponent(textoPlantilla), "FORMATO", "resizable=1,width=1100,height=600,scrollbars=1");
@@ -15,7 +16,7 @@ function transferirTexto() {
 
 var url = "";
 
-const validarCredencialesCliente = async(pNombre, pDescripcion, pCategoria, pTexto, pParametrosEditables) => {
+const validarCredencialesCliente = async(pNombre, pDescripcion, pCategoria, pTexto) => {
     url = 'http://localhost:3000/templates/crear';
 
 
@@ -24,7 +25,7 @@ const validarCredencialesCliente = async(pNombre, pDescripcion, pCategoria, pTex
     formData.append('descripcion', pDescripcion);
     formData.append('categoria', pCategoria);
     formData.append('texto', pTexto);
-    formData.append('parametros', pParametrosEditables);
+    formData.append('parametros', "Lista de parametros");
     const opciones = {
         method: 'POST', // Método de la solicitud
 
@@ -41,7 +42,7 @@ const validarCredencialesCliente = async(pNombre, pDescripcion, pCategoria, pTex
             }
         }).then(data => {
             if (data != null) {
-                window.location.href = '/';
+                //window.location.href = '/';
                 template = data;
             } else {}
         })
