@@ -1,10 +1,9 @@
 .template-list {
-    margin: 0 auto;
+    margin: 30px auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 80%;
-    border: red 1px solid;
     gap: 30px;
 }
 

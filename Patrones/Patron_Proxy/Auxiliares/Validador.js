@@ -3,8 +3,12 @@ class Validador {
     this.id = id;
   }
 
-  validar(usuario, id) {
-    return usuario.getId() === id;
+  validar(usuario, templateUserId, templateCategoria) {
+    if (templateCategoria === "Privada") {
+      return usuario.getId() === templateUserId;
+    } else {
+      return true;
+    }
   }
 }
 

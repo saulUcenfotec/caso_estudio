@@ -9,6 +9,7 @@ const templateSchema = mongoose.Schema({
   parametros: String,
   estado: Boolean,
   userId: String,
+  userName: String,
 });
 
 module.exports = mongoose.model("templates", templateSchema);

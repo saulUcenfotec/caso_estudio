@@ -4,7 +4,6 @@ class ITemplate {
   }
 
   acceder(username, pass, id) {}
-  cargarTemplates() {}
 }
 
 module.exports = ITemplate;
